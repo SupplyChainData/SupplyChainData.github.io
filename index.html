@@ -3,274 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mini Course Python — IT-STEP Academy Jakarta</title>
-  <meta name="description" content="Mini-course Python oleh IT-STEP Academy Jakarta — materi, contoh kode, dan latihan untuk pemula hingga menengah." />
+  <title>Belajar Python — Eko</title>
+  <meta name="description" content="Eko belajar Python melalui mini-course IT-STEP Academy Jakarta." />
   <meta name="theme-color" content="#0f172a" />
-
-  <!-- Favicon (inline SVG as data URI) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50' y='57' font-size='50' text-anchor='middle' font-family='Segoe UI, Roboto, Arial' fill='%23fff'>Py</text></svg>">
-
   <style>
-    /* --------- Reset & layout --------- */
     :root{
-      --bg:#0b1220; --card:#0f172a; --accent:#7c3aed; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --bg:#0b1220;--accent:#3b82f6;--muted:#94a3b8;--card:#0f172a;--radius:14px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,#071025 0%, #071020 60%); color:#e6eef8}
-    a{color:inherit}
-    .container{max-width:1100px;margin:32px auto;padding:24px}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
-    h1{margin:0;font-size:20px}
-    p.lead{margin:0;color:var(--muted);font-size:13px}
-
-    nav{display:flex;gap:10px;align-items:center}
-    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer}
-    .ghost{background:transparent}
-
-    main{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:28px}
-
-    /* hero */
-    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:24px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
-    .hero h2{font-size:28px;margin:6px 0}
-    .kicker{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
-    .features{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-    .feature{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;flex:1;min-width:150px}
-
-    /* modules */
-    .modules{margin-top:18px;display:grid;gap:10px}
-    .module{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
-    .module .num{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .module h3{margin:0;font-size:15px}
-    .module p{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-    /* sidebar */
-    aside .card{background:linear-gradient(180deg,#071025, #06111d);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .repo-link{display:flex;gap:10px;align-items:center}
-    .repo-link img{height:26px}
-
-    /* sample code box */
-    pre{background:#071020;padding:12px;border-radius:8px;overflow:auto;border:1px solid rgba(255,255,255,0.02)}
-    code{font-family:source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;color:#cbd5e1}
-
-    /* CTA */
-    .cta{display:flex;gap:10px;margin-top:14px}
-    .primary{background:linear-gradient(90deg,var(--accent),#06b6d4);padding:10px 14px;border-radius:10px;color:#06111d;font-weight:800}
-
-    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media (max-width:880px){main{grid-template-columns:1fr} .logo{width:48px;height:48px} .container{padding:16px}}
-
-    /* small interactive utilities */
-    .search{display:flex;gap:6px}
-    input.search-input{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:inherit}
-
-    /* tiny badge */
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,ui-sans-serif,system-ui;line-height:1.6;background:var(--bg);color:#e5e7eb;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+    h1{font-size:2rem;margin-bottom:12px;color:white}
+    p{color:var(--muted);max-width:560px;margin:0 auto 20px}
+    a.button{display:inline-block;background:var(--accent);color:white;text-decoration:none;padding:10px 18px;border-radius:var(--radius);font-weight:600;transition:background .2s}
+    a.button:hover{background:#2563eb}
+    main{max-width:700px;background:var(--card);padding:32px;border-radius:var(--radius);box-shadow:0 0 20px rgba(0,0,0,0.2)}
+    footer{margin-top:20px;font-size:13px;color:var(--muted)}
+    nav{margin-bottom:24px}
+    nav a{margin:0 8px;color:var(--muted);text-decoration:none;font-size:14px}
+    nav a:hover{color:white}
+    section{display:none;animation:fade .3s ease}
+    section.active{display:block}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    code{background:rgba(255,255,255,0.05);padding:3px 6px;border-radius:6px;font-family:monospace;color:#cbd5e1}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">Py</div>
-        <div>
-          <h1>Mini Course Python</h1>
-          <p class="lead">IT-STEP Academy Jakarta — materi ringkas, proyek, & latihan</p>
-        </div>
-      </div>
+  <main>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#modules">Modul</a>
+      <a href="#about">Tentang</a>
+    </nav>
+    <section id="home" class="active">
+      <h1>Hai, Saya Eko 👋</h1>
+      <p>Saya sedang belajar <strong>Python</strong> lewat mini course dari IT-STEP Academy Jakarta. Ini adalah catatan kecil perjalanan saya memahami dasar-dasar pemrograman Python dan penerapannya dalam data.</p>
+      <a class="button" href="https://github.com/SupplyChainData/Mini-Course-Python-by-IT-STEP-Academy-Jakarta" target="_blank">Lihat Repository</a>
+    </section>
 
-      <nav>
-        <div class="search">
-          <input class="search-input" id="search" placeholder="Cari modul / kata kunci..." />
-          <button class="btn ghost" id="clear">Clear</button>
-        </div>
-        <a class="btn ghost" href="https://github.com/SupplyChainData/Mini-Course-Python-by-IT-STEP-Academy-Jakarta" target="_blank" rel="noopener">Repo</a>
-      </nav>
-    </header>
+    <section id="modules">
+      <h1>Modul Belajar</h1>
+      <p>Berikut beberapa topik yang sedang saya pelajari:</p>
+      <ul style="list-style:none;margin-top:12px;text-align:left;display:inline-block">
+        <li>1️⃣ Pengenalan Python dan Instalasi</li>
+        <li>2️⃣ Variabel, Tipe Data, dan Operator</li>
+        <li>3️⃣ Struktur Kontrol (if, loop, fungsi)</li>
+        <li>4️⃣ Struktur Data: List, Tuple, Dict, Set</li>
+        <li>5️⃣ File Handling dan CSV</li>
+        <li>6️⃣ Pandas Dasar</li>
+      </ul>
+      <p style="margin-top:16px">Semua materi saya dokumentasikan di repo GitHub di atas.</p>
+    </section>
 
-    <main>
-      <section>
-        <div class="hero">
-          <span class="kicker">Gratis · Self-paced</span>
-          <h2>Belajar Python dari Dasar sampai Proyek Mini</h2>
-          <p style="color:var(--muted);margin-top:8px">Kumpulan materi yang tersusun rapi: teori singkat, contoh kode, latihan, dan file latihan (notebooks / scripts). Cocok untuk pemula yang ingin cepat mahir.</p>
-
-          <div class="features" aria-hidden="false">
-            <div class="feature">
-              <strong>Modular</strong>
-              <div style="color:var(--muted);font-size:13px;margin-top:6px">Setiap modul pendek dan fokus — cocok untuk pembelajaran bertahap.</div>
-            </div>
-            <div class="feature">
-              <strong>Hands-on</strong>
-              <div style="color:var(--muted);font-size:13px;margin-top:6px">Proyek mini dan latihan kode yang bisa langsung dicoba.</div>
-            </div>
-            <div class="feature">
-              <strong>Siap untuk GitHub Pages</strong>
-              <div style="color:var(--muted);font-size:13px;margin-top:6px">Satu klik deploy ke Pages — letakkan file ini ke folder <code>docs/</code> atau root repo.</div>
-            </div>
-          </div>
-
-          <div class="modules">
-            <div class="module" data-title="Pengenalan Python">
-              <div class="num">1</div>
-              <div>
-                <h3>Pengenalan Python</h3>
-                <p>Instalasi, interpreter, menulis script pertama, tipe data dasar.</p>
-              </div>
-            </div>
-            <div class="module" data-title="Kontrol Alur">
-              <div class="num">2</div>
-              <div>
-                <h3>Kontrol Alur & Fungsi</h3>
-                <p>If/else, loop, fungsi, scope, dan best practice penulisan fungsi.</p>
-              </div>
-            </div>
-            <div class="module" data-title="Struktur Data">
-              <div class="num">3</div>
-              <div>
-                <h3>Struktur Data</h3>
-                <p>List, tuple, set, dict, comprehensions, dan manipulasi koleksi.</p>
-              </div>
-            </div>
-            <div class="module" data-title="File dan I/O">
-              <div class="num">4</div>
-              <div>
-                <h3>File, CSV & I/O</h3>
-                <p>Membaca/menulis file, bekerja dengan CSV dan format teks lain.</p>
-              </div>
-            </div>
-            <div class="module" data-title="Pandas & Data">
-              <div class="num">5</div>
-              <div>
-                <h3>Data dengan Pandas</h3>
-                <p>DataFrame, cleaning, agregasi, dan visualisasi dasar.</p>
-              </div>
-            </div>
-            <div class="module" data-title="Proyek Mini">
-              <div class="num">6</div>
-              <div>
-                <h3>Proyek Mini</h3>
-                <p>Studi kasus: analisis sederhana, automasi kecil, dan notebook interaktif.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="cta">
-            <a class="primary" href="#start" id="startBtn">Mulai Belajar</a>
-            <a class="btn ghost" href="https://github.com/SupplyChainData/Mini-Course-Python-by-IT-STEP-Academy-Jakarta" target="_blank">Lihat di GitHub</a>
-          </div>
-
-          <div style="margin-top:14px">
-            <small class="tag">Terakhir diperbarui: 19 Oktober 2025</small>
-          </div>
-        </div>
-
-        <section id="start" style="margin-top:18px">
-          <h3 style="margin-bottom:8px">Contoh Kode Singkat</h3>
-          <pre><code id="sampleCode"># contoh: hitung frekuensi kata
-text = "belajar python di it-step academy jakarta"
-from collections import Counter
-c = Counter(text.split())
-print(c.most_common())
-</code></pre>
-
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <button class="btn" id="copyCode">Salin kode</button>
-            <button class="btn" id="runSnippet">Jalankan (console)</button>
-            <span id="msg" style="color:var(--muted);font-size:13px;margin-left:8px"></span>
-          </div>
-        </section>
-
-      </section>
-
-      <aside>
-        <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <strong>Repository</strong>
-              <div style="color:var(--muted);font-size:13px">Mini Course Python — materi & latihan</div>
-            </div>
-            <a class="repo-link" href="https://github.com/SupplyChainData/Mini-Course-Python-by-IT-STEP-Academy-Jakarta" target="_blank">
-              <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github"/>
-            </a>
-          </div>
-
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0" />
-
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <div><strong>Fitur yang disarankan</strong></div>
-            <ul style="color:var(--muted);margin:0;padding-left:18px">
-              <li>Tambahkan notebook contoh (.ipynb)</li>
-              <li>Buat folder <code>exercises/</code> untuk latihan</li>
-              <li>Sertakan CI untuk cek style (flake8)</li>
-            </ul>
-
-            <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:8px 0" />
-
-            <div>
-              <strong>Kontak</strong>
-              <div style="color:var(--muted);font-size:13px">Untuk kontributor: buka issue atau pull request</div>
-            </div>
-          </div>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <strong>Statis</strong>
-              <div style="color:var(--muted);font-size:13px">Ukuran repo, bahasa, bintang (fetch manual)</div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-weight:800">Python</div>
-              <div style="color:var(--muted);font-size:13px">Primary</div>
-            </div>
-          </div>
-        </div>
-
-      </aside>
-    </main>
-
-    <footer>
-      Dibuat otomatis oleh template GitHub Pages · © IT-STEP Academy Jakarta · Built with ❤️
-    </footer>
-  </div>
+    <section id="about">
+      <h1>Tentang Halaman Ini</h1>
+      <p>Halaman ini adalah <strong>Single Page Application (SPA)</strong> sederhana menggunakan HTML, CSS, dan JavaScript tanpa framework. Tujuannya untuk latihan dasar web sambil mendokumentasikan pembelajaran Python saya.</p>
+      <pre style="margin-top:16px;text-align:left"><code>print("Halo, saya Eko, sedang belajar Python!")</code></pre>
+    </section>
+  </main>
+  <footer>
+    © 2025 Eko Setyanto · Dibuat untuk belajar Python · IT-STEP Academy Jakarta
+  </footer>
 
   <script>
-    // Small interactive behavior: search modules, copy code, and run snippet (eval limited)
-    const modules = Array.from(document.querySelectorAll('.module'));
-    const searchInput = document.getElementById('search');
-    const clearBtn = document.getElementById('clear');
-    searchInput.addEventListener('input', ()=>{
-      const q = searchInput.value.trim().toLowerCase();
-      modules.forEach(m=>{
-        const title = m.dataset.title.toLowerCase();
-        if(!q || title.includes(q)) m.style.display = 'flex'; else m.style.display = 'none';
-      });
-    });
-    clearBtn.addEventListener('click', ()=>{searchInput.value='';searchInput.dispatchEvent(new Event('input'))});
-
-    // copy sample code
-    document.getElementById('copyCode').addEventListener('click', async ()=>{
-      const code = document.getElementById('sampleCode').textContent;
-      try{ await navigator.clipboard.writeText(code); document.getElementById('msg').textContent='Kode disalin ke clipboard.' }
-      catch(e){ document.getElementById('msg').textContent='Gagal menyalin.' }
-      setTimeout(()=>document.getElementById('msg').textContent='',2500);
-    });
-
-    // run snippet: note - in browser we cannot run Python; provide guidance
-    document.getElementById('runSnippet').addEventListener('click', ()=>{
-      const msg = `Browser tidak bisa menjalankan Python langsung. Untuk mencobanya: jalankan di terminal/REPL Python atau gunakan online runner seperti Replit / Google Colab. Contoh: copy & paste kode ke python3.`;
-      alert(msg);
-    });
-
-    // start button scroll
-    document.getElementById('startBtn').addEventListener('click', (e)=>{e.preventDefault();document.querySelector('#start').scrollIntoView({behavior:'smooth'})});
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+    function showSection(hash){
+      sections.forEach(s=>s.classList.remove('active'));
+      const target=document.querySelector(hash||'#home');
+      if(target) target.classList.add('active');
+    }
+    window.addEventListener('hashchange',()=>showSection(location.hash));
+    document.addEventListener('DOMContentLoaded',()=>showSection(location.hash||'#home'));
   </script>
 </body>
 </html>
